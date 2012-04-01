@@ -31,30 +31,30 @@ Or install it yourself as:
     $ gem install programr
 
 ## Usage
-    ```ruby
-    #programr_test.rb
+```ruby
+#programr_test.rb
 
-    require 'bundler'
-    Bundler.setup :default
+require 'bundler'
+Bundler.setup :default
 
-    require 'programr'
+require 'programr'
 
-    if ARGV.empty?
-      puts 'Please pass a list of AIMLs and/or directories as parameters'
-      puts 'Usage: ruby programr_test.rb {aimlfile|dir}[{aimlfile|dir}]...'
-      exit
-    end
+if ARGV.empty?
+  puts 'Please pass a list of AIMLs and/or directories as parameters'
+  puts 'Usage: ruby programr_test.rb {aimlfile|dir}[{aimlfile|dir}]...'
+  exit
+end
 
-    robot = ProgramR::Facade.new
-    robot.learn(ARGV)
+robot = ProgramR::Facade.new
+robot.learn(ARGV)
 
-    while true
-      print '>> '
-      s = STDIN.gets.chomp
-      reaction = robot.get_reaction(s)
-      STDOUT.puts "<< #{reaction}"
-    end
-    ```
+while true
+  print '>> '
+  s = STDIN.gets.chomp
+  reaction = robot.get_reaction(s)
+  STDOUT.puts "<< #{reaction}"
+end
+```
 ## Contributing
 
 1. Fork it
