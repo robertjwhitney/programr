@@ -31,7 +31,7 @@ Or install it yourself as:
     $ gem install programr
 
 ## Usage
-
+    ```ruby
     #programr_test.rb
 
     require 'bundler'
@@ -54,7 +54,7 @@ Or install it yourself as:
       reaction = robot.get_reaction(s)
       STDOUT.puts "<< #{reaction}"
     end
-
+    ```
 ## Contributing
 
 1. Fork it
