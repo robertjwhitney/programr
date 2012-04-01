@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+Client: I admire robots like you. 
+ Robot: That's good information: Joe said he admire robots like me. 
+
+<topic name="WORK">
+ <category>
+  <pattern>atomic test</pattern>
+  <template>new test succeded</template>
+ </category>
+</topic>
+
+ <category> 
+  <pattern>yes *</pattern> 
+  <template><srai>yes</srai> <sr/></template> 
+ </category> 
+   
+ <category> 
+  <pattern>yes</pattern> 
+  <template>ok yes</template> 
+ </category> 
+   
+<topic name="* GAME">
+ <category>
+  <pattern>atomic test</pattern>
+  <template>topic star test succeded <topicstar/></template>
+ </category>
+</topic>
+
+ <category>
+  <pattern>test thatstar</pattern>
+  <template>WHAT IS YOUR FAVORITE FOOTBALL TEAM</template> 
+ </category>  
+     
+ <category>
+  <pattern>MY FAVORITE FOOTBALL TEAM IS *</pattern>
+  <template>ALSO MINE IS <star index='1'/></template> 
+ </category>  
+     
+ <category>
+  <pattern>*</pattern> <that>WHAT IS YOUR FAVORITE *</that>
+  <template><srai>MY FAVORITE <thatstar/> IS <star/></srai></template> 
+ </category>  
+     
+ <category> 
+  <pattern>gender test 2 *</pattern> 
+  <template><gender><star/></gender></template> 
+ </category>
+      
+ <category> 
+  <pattern>test gender</pattern> 
+  <template><gender>he told to her to take a hike</gender> but
+            <gender>his ego was too much for her</gender></template> 
+ </category>
+      
+ <category> 
+  <pattern>* answers no</pattern> 
+  <template><person><star/></person> answers no</template> 
+ </category>
+      
+ <category> 
+  <pattern>you say everything ok to me</pattern> 
+  <template><person2>you say everything ok to me</person2></template> 
+ </category>
+      
+ <category> 
+  <pattern>test input</pattern> 
+  <template><input/>.<input index="2"/></template> 
+ </category>
+      
+ <category> 
+  <pattern>random test</pattern> 
+  <template>
+   <random>
+   <li>A</li>
+   </random>
+  </template> 
+ </category>
+      
+ <category> 
+  <pattern>formal test</pattern> 
+  <template><formal>the formal test</formal></template> 
+ </category>
+      
+ <category> 
+  <pattern>sentence test</pattern> 
+  <template><sentence>the sentence test</sentence></template> 
+ </category>
+      
+ <category> 
+  <pattern>I AM BLOND</pattern> 
+  <template>You sound very
+   <condition name="gender" value="*emale">attractive.</condition> 
+   <condition name="gender" value="male">handsome.</condition> 
+  </template> 
+ </category>
+      
+<category> 
+ <pattern>I AM RED</pattern> 
+  <template>You sound very 
+   <condition> 
+    <li name="gender" value="female">attractive.</li> 
+    <li name="gender" value="male">handsome.</li> 
+   </condition> 
+  </template> 
+ </category> 
+
+<category> 
+ <pattern>I AM BLACK</pattern> 
+  <template>You sound very 
+   <condition name="gender"> 
+    <li value="female">attractive.</li> 
+    <li value="male">handsome.</li> 
+   </condition> 
+  </template> 
+ </category> 
+	
+ <category>
+  <pattern>test set</pattern>
+  <template><get_gender/>.<set_gender>female</set_gender>.<get_gender/></template>
+ </category>
+
+ <category>
+  <pattern>think test. i am male</pattern>
+  <template>ok.<think><get_gender/></think></template>
+ </category>
+
+ <category>
+  <pattern>question test</pattern>
+  <template><question/></template>
+ </category>
+
+ <category>
+  <pattern>get test 1</pattern>
+  <template><bot_name/></template>
+ </category>
+
+ <category>
+  <pattern>get test 2</pattern>
+  <template><get name="ip"/></template>
+ </category>
+
+ <category>
+  <pattern>justbeforethat tag test</pattern>
+  <template><that index="2,1"/></template>
+ </category>
+
+ <category>
+  <pattern>that tag test</pattern>
+  <template><that/></template>
+ </category>
+
+ <category>
+  <pattern>atomic test</pattern>
+  <template>test succeded</template>
+ </category>
+
+ <category>
+  <pattern>srai test</pattern>
+  <template><srai>atomic test</srai><think><set_topic>WORK</set_topic></think></template>
+ </category>
+
+ <category>
+  <pattern>that test</pattern>
+  <that>NEW TEST SUCCEDED</that>
+  <template>that test 1</template>
+ </category>
+
+ <category>
+  <pattern>that test</pattern>
+  <that>THAT TEST 1</that>
+  <template>that test 2<think><set_topic>OK GAME</set_topic></think></template>
+ </category>
+
+ <category>
+  <pattern>uppercase test</pattern>
+  <template>the <uppercase>uppercase</uppercase> test</template>
+ </category>
+
+ <category>
+  <pattern>LOWERCASE TEST</pattern>
+  <template>the <lowercase>LOWERCASE</lowercase> test</template>
+ </category>
+
+ <category>
+  <pattern>DATE TEST</pattern>
+  <template><date/></template>
+ </category>
+      
+ <category>
+  <pattern>SYSTEM TEST</pattern>
+  <template>time:<system>date</system></template>
+ </category>
+      
+ <category>
+  <pattern>SIZE TEST</pattern>
+  <template><size/></template>
+ </category>
+      
+ <category>
+  <pattern>SPACE TEST</pattern>
+  <template>  TEST   SPACE  </template>
+ </category>
+
+ <!-- next three are test for * and _ -->
+ <category>
+  <pattern>This * her</pattern>
+  <template>star wins</template>
+ </category>
+
+  <category>
+    <pattern>This _ you</pattern>
+    <template>underscore wins</template>
+  </category>
+  
+  <category>
+    <pattern>This * you</pattern>
+    <template>star does not win</template>
+  </category>
+
+  <category>
+    <pattern>This is clearly you</pattern>
+    <template>explicit pattern wins</template>
+  </category>
+
+  <category>
+    <pattern>These * clearly * them</pattern>
+    <template>first star is <star index="1"/> second star is <star index="2"/></template>
+  </category>
+  <!-- end test for * and _ -->
+</aiml>

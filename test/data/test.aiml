@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+ <category>
+  <pattern>1 *</pattern>
+  <template>One what?  </template>
+ </category>
+
+ <category>
+  <pattern>1 0</pattern>
+  <template>One.  </template>
+ </category>
+
+ <category>
+  <pattern>very long pattern is this</pattern>
+  <template>very long</template>
+ </category>
+
+ <category>
+  <pattern>very long pattern is that over there</pattern>
+  <template>very very long</template>
+ </category>
+
+ <category>
+  <pattern>DATE TEST</pattern>
+  <template><date/></template>
+ </category>
+
+ <category>
+  <pattern>SIZE TEST</pattern>
+  <template><size/></template>
+ </category>
+
+ <category>
+  <pattern>SYSTEM TEST</pattern>
+  <template><system>whoami</system></template>
+ </category>
+
+ <category>
+  <pattern>SRAI TEST</pattern>
+  <template><srai>SIZE TEST</srai></template>
+ </category>
+</aiml>
