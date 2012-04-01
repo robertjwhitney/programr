@@ -32,6 +32,8 @@ Or install it yourself as:
 
 ## Usage
 
+    #programr_test.rb
+
     require 'bundler'
     Bundler.setup :default
 
@@ -39,7 +41,7 @@ Or install it yourself as:
 
     if ARGV.empty?
       puts 'Please pass a list of AIMLs and/or directories as parameters'
-      puts 'Usage: programR {aimlfile|dir}[{aimlfile|dir}]...'
+      puts 'Usage: ruby programr_test.rb {aimlfile|dir}[{aimlfile|dir}]...'
       exit
     end
 
