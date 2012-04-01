@@ -2,7 +2,7 @@
 
 ### Aside:
 
-This is just a simple port of http://aiml-programr.rubyforge.org/ authored in 2007, to something
+This is just a simple port of http://aiml-programr.rubyforge.org/ (authored in 2007), to something
 a tiny bit more usable. No new code really, I just sorta took the necessary parts to turn it into a gem for curiosities sake.
 
 AIML itself seems pretty simple, and weak as far as pattern matching goes, but the ALICE bot has won the Loebner prize, so there's that.
