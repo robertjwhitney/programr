@@ -38,6 +38,7 @@ You can find a set of ALICE AIML files hosted at http://code.google.com/p/aiml-e
 Some of them have thrown errors in my tests so a subset is available here: https://github.com/robertjwhitney/alice-programr
 
 ## Usage
+
 ```ruby
 #programr_test.rb
 
@@ -51,6 +52,9 @@ if ARGV.empty?
   puts 'Usage: ruby programr_test.rb {aimlfile|dir}[{aimlfile|dir}]...'
   exit
 end
+
+# You can custom readonly tags
+ProgramR::Environment.readonly_tags_file = 'test/data/readOnlyTags.yaml'
 
 robot = ProgramR::Facade.new
 robot.learn(ARGV)

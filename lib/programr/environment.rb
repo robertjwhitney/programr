@@ -6,12 +6,18 @@ class Environment
   @@readOnlyTags = nil
   @@history      = nil
 
+  def self.readonly_tags_file= file
+    new if @@readOnlyTags.nil?
+    unless File.exist? file
+      raise "File #{file} not exist"
+    end
+    @@readOnlyTags = YAML::load(File.open(file))
+  end
+
   def initialize
-    return self unless(@@readOnlyTags == nil)
-    @@readOnlyTags = YAML::load(
-                          File.open( 
-                            File.dirname(__FILE__) +
-                              "/../../conf/readOnlyTags.yaml"))
+    return self if @@readOnlyTags
+    readonly_tags_file = "#{File.dirname(__FILE__)}/../../conf/readOnlyTags.yaml"
+    @@readOnlyTags = YAML::load(File.open(readonly_tags_file))
     @@history      = History.new
     srand(1)
   end
@@ -31,35 +37,35 @@ class Environment
     return @@readOnlyTags[tag] if(@@readOnlyTags.key?(tag))
     ''
   end
-  
+
   def test
     #should overwrite test ....
     return @@readOnlyTags[tag] if(@@readOnlyTags.key?(tag))
     ''
   end
-  
+
   def star(anIndex)
     @@history.getStar(anIndex)
   end
-  
+
   def thatstar(anIndex)
     @@history.getThatStar(anIndex)
   end
-  
+
   def topicstar(anIndex)
     @@history.getTopicStar(anIndex)
   end
-  
+
   def male
     @@readOnlyTags['gender'] = 'male'
     return 'male'
   end
-  
+
   def female
     @@readOnlyTags['gender'] = 'female'
     return 'female'
   end
-  
+
   def question
     @@readOnlyTags['question'][rand(@@readOnlyTags['question'].length-1)]
   end
