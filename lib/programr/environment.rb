@@ -61,11 +61,11 @@ class Environment
   end
   
   def question
-    @@readOnlyTags['question'][rand(@@readOnlyTags['question'].length-1)]
+    @@readOnlyTags['question'][rand(@@readOnlyTags['question'].length)]
   end
 
   def getRandom(anArrayofChoices)
-    anArrayofChoices[rand(anArrayofChoices.length-1)]
+    anArrayofChoices[rand(anArrayofChoices.length)]
   end
 
   def getStimula(anIndex)
