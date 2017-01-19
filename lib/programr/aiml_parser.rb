@@ -190,7 +190,6 @@ class AimlParser
     }
     
     @parser.listen(:characters, %w{ srai }){|text|
-      currentSrai = Srai.new
       currentSrai.add(text)
     }
     
